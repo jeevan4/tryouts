@@ -1,12 +1,13 @@
 a = [1,4,-3,-4,6,-7,8,-5]
 k = 5
 
-sumdic = {}
-sumdic[k] = -1
-sum1 = 0
-for i,elem in enumerate(a):
-	sum1 = sum1 + elem
-	if sum1 == k and sumdic.get(sum1) != None:
-		print a[sumdic[sum1]+1:i+1]
-	else:
-		sumdic[sum1] = i
+def seqsum(a,k):
+	dic = {}
+	cumsum = 0
+	dic[cumsum] = -1
+	for ind,elem in enumerate(a):
+		cumsum = cumsum+elem
+		if cumsum - k in dic:
+			print a[dic[cumsum-k]+1:ind+1]
+		else:
+			dic[cumsum] = ind
