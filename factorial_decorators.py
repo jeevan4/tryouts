@@ -18,3 +18,19 @@ def fact(n):
 		return 1
 	else:
 		return n*fact(n-1)
+
+def fast_fib(fib):
+	cache = {}
+	def faster(n):
+		if n not in cache:
+			print 'inside'
+			cache[n] = fib(n)
+		return cache[n]
+	return faster
+			
+@fast_fib			
+def fib(n):
+	if n<=1:
+		return n
+	else:
+		return fib(n-1)+fib(n-2)
