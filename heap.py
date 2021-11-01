@@ -32,3 +32,5 @@ while i < le:
 	b.append(a.pop(0))
 	print a,b
 	i +=1
+
+# edited from vscode.dev
